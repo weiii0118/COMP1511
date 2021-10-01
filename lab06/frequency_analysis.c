@@ -17,7 +17,7 @@ int main(void) {
     // this could also be done by changing the declaration to
     // int integer_counts[LARGEST_INTEGER + 1] = {0};
 
-    int i = 0;
+    int i = 0 , a = 0;
     while (i < LARGEST_INTEGER) {
        integer_counts[i] = 0;
        i = i + 1;
