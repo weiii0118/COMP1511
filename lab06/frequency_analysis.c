@@ -54,20 +54,22 @@ int main()
     while(ch!=EOF)
     {
         int nch=swap_case(ch);    
-        
+        if(nch>='a'&&nch<='z')
+        {
             integer_counts[nch-97] = integer_counts[nch-97] + 1;
-        sum=sum+1;
+            sum=sum+1;
+        }
         ch=getchar();    
         
         
     }
-    sum--;        
+           
     for(nch = 'a' ; nch <='z' ; nch++)
     {   
     a=integer_counts[nch-97]/sum;            
         printf("'%c' %f %d \n",nch,a,integer_counts[nch-97]);     
             
-     }    
+    }    
   
     return 0;
 }
