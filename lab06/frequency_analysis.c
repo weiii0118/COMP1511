@@ -3,7 +3,7 @@
 //
 // Andrew Taylor - andrewt@unsw.edu.au
 // 10/4/18
-
+/*
 #include <stdio.h>
 
 #define LARGEST_INTEGER 99
@@ -17,7 +17,7 @@ int main(void) {
     // this could also be done by changing the declaration to
     // int integer_counts[LARGEST_INTEGER + 1] = {0};
 
-    int i = 0 , a = 0;
+    int i = 0 ;
     while (i < LARGEST_INTEGER) {
        integer_counts[i] = 0;
        i = i + 1;
@@ -38,4 +38,46 @@ int main(void) {
         }
     }
 
+}*/
+
+
+#include <stdio.h>
+int swap_case(int ch);
+int main()
+{
+   
+    int integer_counts[26]={0};
+    int ch=getchar();
+    int nch;
+    float sum=0,a=0;
+    
+    while(ch!=EOF)
+    {
+        int nch=swap_case(ch);    
+        
+            integer_counts[nch-97] = integer_counts[nch-97] + 1;
+        sum=sum+1;
+        ch=getchar();    
+        
+        
+    }
+    sum--;        
+    for(nch = 'a' ; nch <='z' ; nch++)
+    {   
+    a=integer_counts[nch-97]/sum;            
+        printf("'%c' %f %d \n",nch,a,integer_counts[nch-97]);     
+            
+     }    
+  
+    return 0;
+}
+
+int swap_case(int ch)
+{
+if(ch>='A'&& ch<='Z')
+    {
+        ch=ch+32;
+        return ch; 
+    }
+return ch;
 }
