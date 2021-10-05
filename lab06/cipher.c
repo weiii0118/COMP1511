@@ -19,29 +19,30 @@ int main(int argc, char *argv[]) {
 }
 int encrypt(int character, int shift)
 {
-if(character >='a'&& character <= 'z'){
+    if(character >='a'&& character <= 'z'){
         character=character+shift;
         if(character>'z')
         {
             character=character-26;
         }
-        if(character<'a')
+        else if(character<'a')
         {
             character=character+26;
         }
-        return  character;
+        
     }
-else if(character>='A'&& character<='Z'){
+    else if(character>='A'&& character<='Z'){
         character=character+shift;
         if(character>'Z')
         {
             character=character-26;
         }
-        if(character<'A')
+        else if(character<'A')
         {
             character=character+26;
         }
         
-        return character; 
+         
     }
+return character;
 }
